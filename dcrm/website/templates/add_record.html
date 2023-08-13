@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <div class="row">
+        <h2>Add new Record</h2>
+    </div>
+    <br/>
+  <form method="POST" action="{% url 'add_record' %}">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <div class="row mb-3">
+        <input type="text" class="form-control" name="first_name" placeholder="First name" required>
+    </div>
+    <div class="row mb-3">
+        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+    </div>
+    <div class="row mb-3">
+        <input type="text" class="form-control" name="email" placeholder="Email" required>
+    </div>
+    <div class="row mb-3">
+        <input type="text" class="form-control" name="phone" placeholder="Phone" required>
+    </div>
+    <div class="row mb-3">
+      <input type="text" class="form-control" name="address" placeholder="Address" required>
+    </div>
+    <div class="row mb-3">
+      <input type="text" class="form-control" name="city" placeholder="City" required>
+    </div>
+    <div class="row mb-3">
+      <input type="text" class="form-control" name="state" placeholder="State" required>
+    </div>
+    <div class="row mb-3">
+      <input type="text" class="form-control" name="zipcode" placeholder="Zipcode" required>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
+</div>
+<br>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back </a>
+
+{% endblock %}
+
+
+
